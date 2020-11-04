@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Button } from 'antd-mobile';
+import Login from './Login';
+import '../style/home.scss'
 
 class Home extends Component {
   render() {
     return (
-      <div>
-        <Button>Start</Button>
+      <div className="home">
+        <Login></Login>
       </div>
     );
   }
