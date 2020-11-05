@@ -8,6 +8,7 @@ class Login extends Component {
     this.props.form.validateFields({ force: true }, (error) => {
       if (!error) {
         console.log(this.props.form.getFieldsValue());
+        
       } else {
         console.log("Validation failed");
       }
