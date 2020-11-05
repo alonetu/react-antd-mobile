@@ -1,27 +1,27 @@
-import React, { Component } from "react";
-import "../style/login.scss";
-import { InputItem, Button, WingBlank, WhiteSpace } from "antd-mobile";
-import { createForm } from "rc-form";
+import React, { Component } from 'react'
+import '../style/login.scss'
+import { InputItem, Button, WingBlank, WhiteSpace } from 'antd-mobile'
+import { createForm } from 'rc-form'
 
 class Login extends Component {
   onSubmit = () => {
-    this.props.form.validateFields({ force: true }, (error) => {
+    this.props.form.validateFields({ force: true }, error => {
       if (!error) {
-        console.log(this.props.form.getFieldsValue());
-        
+        console.log(this.props.form.getFieldsValue())
+        this.props.history.push('/home')
       } else {
-        console.log("Validation failed");
+        console.log('Validation failed')
       }
-    });
-  };
+    })
+  }
 
   render() {
-    const { getFieldProps } = this.props.form;
+    const { getFieldProps } = this.props.form
     return (
       <div className="login">
         <WingBlank>
           <InputItem
-            {...getFieldProps("username")}
+            {...getFieldProps('username')}
             labelNumber="3"
             placeholder="请输入账号"
           >
@@ -31,7 +31,7 @@ class Login extends Component {
         </WingBlank>
         <WingBlank>
           <InputItem
-            {...getFieldProps("password")}
+            {...getFieldProps('password')}
             labelNumber="3"
             type="password"
             placeholder="请输入密码"
@@ -40,10 +40,12 @@ class Login extends Component {
           </InputItem>
           <WhiteSpace />
         </WingBlank>
-        <Button className="login-submit" onClick={this.onSubmit}>提交</Button>
+        <Button className="login-submit" onClick={this.onSubmit}>
+          提交
+        </Button>
       </div>
-    );
+    )
   }
 }
 
-export default createForm()(Login);
+export default createForm()(Login)

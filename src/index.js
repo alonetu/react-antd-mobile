@@ -13,4 +13,4 @@ const router =
     <Route path="/login" component={Login}></Route>
   </HashRouter>
 
-ReactDOM.render(router, document.getElementById('root'));
+ReactDOM.render(router, document.getElementById('root'))
